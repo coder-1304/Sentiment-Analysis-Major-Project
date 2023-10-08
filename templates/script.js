@@ -6,12 +6,13 @@ document.addEventListener("DOMContentLoaded", function () {
   analyzeButton.addEventListener("click", function () {
     const text = textInput.value;
 
-    // Create a JSON object with the text data
     const data = {
       text: text,
     };
     console.log(data);
     var image = document.getElementById("image");
+    let color = "";
+    let result = "";
 
     // Send a POST request to the server
     fetch("http://127.0.0.1:8080/prediction", {
@@ -22,63 +23,46 @@ document.addEventListener("DOMContentLoaded", function () {
       body: JSON.stringify(data),
     })
       .then((response) => response.json())
-      .then((result) => {
-        // Update the resultText element with the response from the server
-        switch (result.predicted_emotion) {
+      .then((res) => {
+        switch (res.predicted_emotion) {
           case "neutral":
-            resultText.style.color = "gray";
-            resultText.textContent = "Neutral 😐";
-            document.body.style.backgroundColor = "gray";
-            image.src = "./images/neutral.jpg";
+            color = "gray";
+            result = "Neutral 😐";
             break;
           case "joy":
-            resultText.style.color = "green";
-            resultText.textContent = "Joy 😄";
-            document.body.style.backgroundColor = "green";
-            image.src = "./images/joy.jpg";
+            color = "green";
+            result = "Joy 😄";
             break;
           case "sadness":
-            resultText.style.color = "blue";
-            resultText.textContent = "Sadness 😢";
-            document.body.style.backgroundColor = "rgb(28, 60, 149)";
-            image.src = "./images/sadness.jpg";
+            result = "Sadness 😢";
+            color = "rgb(28, 60, 149)";
             break;
           case "fear":
-            resultText.style.color = "rgb(33, 33, 33)";
-            resultText.textContent = "Fear 😨";
-            document.body.style.backgroundColor = "rgb(33, 33, 33)";
-            image.src = "./images/fear.jpg";
+            result = "Fear 😨";
+            color = "rgb(33, 33, 33)";
             break;
           case "surprise":
-            resultText.style.color = "rgb(205, 205, 0)";
-            resultText.textContent = "Surprise 😲";
-            document.body.style.backgroundColor = "rgb(205, 205, 0)";
-            image.src = "./images/surprise.jpg";
+            result = "Surprise 😲";
+            color = "rgb(205, 205, 0)";
             break;
           case "anger":
-            resultText.style.color = "red";
-            resultText.textContent = "Anger 😡";
-            document.body.style.backgroundColor = "darkred";
-            image.src = "./images/anger.jpg";
+            result = "Anger 😡";
+            color = "darkred";
             break;
           case "shame":
-            resultText.style.color = "pink";
-            resultText.textContent = "Shame 😳";
-            document.body.style.backgroundColor = "pink";
-            image.src = "./images/shame.jpg";
+            result = "Shame 😳";
+            color = "pink";
             break;
           case "disgust":
-            resultText.style.color = "brown";
-            resultText.textContent = "Disgust 🤢";
-            document.body.style.backgroundColor = "brown";
-            image.src = "./images/disgust.jpg";
-
+            result = "Disgust 🤢";
+            color = "brown";
             break;
           default:
             resultText.style.color = "black"; // Default color for other sentiments
         }
-
-        // resultText.textContent = `${result.predicted_emotion}`;
+        image.src = `./images/${res.predicted_emotion}.jpg`;
+        resultText.textContent = result;
+        document.body.style.backgroundColor = color;
       })
       .catch((error) => {
         console.error("Error:", error);

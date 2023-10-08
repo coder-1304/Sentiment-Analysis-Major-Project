@@ -3,6 +3,7 @@ body, h1, h2, p {
     margin: 0;
     padding: 0;
     transition: all 1.3s ease;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .center-container{
