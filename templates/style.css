@@ -1,14 +1,24 @@
+/* Reset some default styles */
 body, h1, h2, p {
     margin: 0;
     padding: 0;
     transition: all 1.3s ease;
 }
 
+.center-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+/* Style the container */
 .container {
     width: 100%;
     max-width: 600px;
     margin: 0 auto;
-    margin-top: 30px;
+    margin-top: 10px;
     text-align: center;
     padding: 20px;
     font-family: Arial, sans-serif;
@@ -18,12 +28,14 @@ body, h1, h2, p {
     /* color: rgb(33, 33, 33); */
 }
 
+/* Style the heading */
 h1 {
     color: #333;
     font-size: 28px;
     margin-bottom: 20px;
 }
 
+/* Style the form container */
 .form-container {
     background-color: #fff;
     padding: 20px;
@@ -31,6 +43,7 @@ h1 {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
+/* Style the text input */
 label, textarea {
     display: block;
     margin-bottom: 10px;
@@ -44,6 +57,7 @@ textarea {
     resize: none;
 }
 
+/* Style the analyze button */
 #analyze-button {
     background-color: #007bff;
     color: #fff;
@@ -58,6 +72,7 @@ textarea {
     background-color: #0056b3;
 }
 
+/* Style the result container */
 .result-container {
     margin-top: 20px;
 }
@@ -74,6 +89,7 @@ h2 {
     transition: all 1s ease;
 }
 
+/* Responsive design */
 @media (max-width: 768px) {
     .container {
         padding: 10px;
@@ -102,4 +118,11 @@ h2 {
     #result-text {
         font-size: 28px;
     }
+}
+
+
+#image{
+    width: 200px;
+    margin-top: 10px;
+    transition: all 2s ease;
 }
