@@ -5,6 +5,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
   analyzeButton.addEventListener("click", function () {
     const text = textInput.value;
+    if(text.length===0){
+      alert("Please add some text");
+      return;
+    }
     document.getElementById("emotions-meter").style.display = "none"
     const data = {
       text: text,
