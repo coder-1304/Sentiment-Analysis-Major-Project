@@ -23,7 +23,7 @@ body, h1, h2, p {
     text-align: center;
     padding: 20px;
     font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
+    background-color: #f5f5f5;  /*Background of main*/
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     /* color: rgb(33, 33, 33); */
@@ -75,7 +75,9 @@ textarea {
 
 /* Style the result container */
 .result-container {
-    margin-top: 20px;
+    /* display: none; */
+    /* margin-top: 20px; */
+    margin-left: 12px;
 }
 
 h2 {
@@ -84,8 +86,8 @@ h2 {
 }
 
 #result-text {
-    font-size: 25px;
-    margin-top: 10px;
+    font-size: 27px;
+    /* margin-top: 10px; */
     font-weight: bold;
     transition: all 1s ease;
 }
@@ -122,8 +124,24 @@ h2 {
 }
 
 
-#image{
-    width: 200px;
+#emotions-meter{
+    width: 400px;
     margin-top: 10px;
-    transition: all 2s ease;
+    /* transition: all 2s ease; */
+    /* color:rgb(177, 77, 77); */
+}
+
+#meme-image{
+    border-radius: 50%;
+    width: 100px;
+    /* display: none; */
+}
+
+.upper-result-container{
+    /* display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center; */
+    transform: all 2s ease;
+    margin-top: 6px;
 }
